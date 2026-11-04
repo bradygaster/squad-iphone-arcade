@@ -1,8 +1,54 @@
 {
   "schema": "squad-agent-provenance/v1",
   "schema_version": 1,
-  "revision": 1,
-  "generated_at": "1970-01-01T00:00:00.000Z",
-  "agents": {},
-  "transaction_id": "ca97f4dc-013d-447a-8052-12ad9913daa1"
+  "revision": 6,
+  "generated_at": "2026-11-04T00:17:21.349Z",
+  "agents": {
+    "mal": {
+      "display_name": "Mal",
+      "persistent_name": "Mal",
+      "role": "Lead / Architect",
+      "universe": "cli-cast",
+      "status": "active",
+      "created_at": "2026-11-04T00:17:20.467Z",
+      "updated_at": "2026-11-04T00:17:20.467Z"
+    },
+    "kaylee": {
+      "display_name": "Kaylee",
+      "persistent_name": "Kaylee",
+      "role": "Game Developer",
+      "universe": "cli-cast",
+      "status": "active",
+      "created_at": "2026-11-04T00:17:20.685Z",
+      "updated_at": "2026-11-04T00:17:20.685Z"
+    },
+    "wash": {
+      "display_name": "Wash",
+      "persistent_name": "Wash",
+      "role": "Frontend Developer",
+      "universe": "cli-cast",
+      "status": "active",
+      "created_at": "2026-11-04T00:17:20.900Z",
+      "updated_at": "2026-11-04T00:17:20.900Z"
+    },
+    "river": {
+      "display_name": "River",
+      "persistent_name": "River",
+      "role": "Input & Audio Engineer",
+      "universe": "cli-cast",
+      "status": "active",
+      "created_at": "2026-11-04T00:17:21.115Z",
+      "updated_at": "2026-11-04T00:17:21.115Z"
+    },
+    "zoe": {
+      "display_name": "Zoe",
+      "persistent_name": "Zoe",
+      "role": "Test Engineer",
+      "universe": "cli-cast",
+      "status": "active",
+      "created_at": "2026-11-04T00:17:21.349Z",
+      "updated_at": "2026-11-04T00:17:21.349Z"
+    }
+  },
+  "transaction_id": "9540a2ff-6525-4d36-b639-4729830b6ac5"
 }
