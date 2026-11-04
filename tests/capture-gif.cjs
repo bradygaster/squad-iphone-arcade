@@ -5,7 +5,7 @@ const { chromium } = require('playwright');
   const b = await chromium.launch();
   const p = await b.newPage({ viewport: { width: 390, height: 760 }, deviceScaleFactor: 1 });
   const errs = []; p.on('pageerror', e => errs.push(e.message));
-  await p.goto('process.argv[3] || "http://localhost:8000/"'); await p.waitForTimeout(400);
+  await p.goto(process.argv[3] || 'http://localhost:8000/'); await p.waitForTimeout(400);
   await p.evaluate(() => { localStorage.setItem('shatterline.highscore.v1','1200'); });
   await p.reload(); await p.waitForTimeout(400);
   await p.evaluate(() => window.__shatterline.stop());
