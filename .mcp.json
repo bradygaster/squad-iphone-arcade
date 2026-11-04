@@ -1,0 +1,29 @@
+{
+  "mcpServers": {
+    "squad_state": {
+      "command": "/opt/node22/bin/node",
+      "args": [
+        "/opt/node22/lib/node_modules/@bradygaster/squad-cli/dist/cli-entry.js",
+        "state-mcp"
+      ],
+      "env": {},
+      "tools": [
+        "*"
+      ],
+      "x-squad": {
+        "managed": true,
+        "version": "2.0.0-preview.3",
+        "machineSpecific": true,
+        "source": "local-entry",
+        "fallback": {
+          "command": "npx",
+          "args": [
+            "-y",
+            "@bradygaster/squad-cli@2.0.0-preview.3",
+            "state-mcp"
+          ]
+        }
+      }
+    }
+  }
+}
