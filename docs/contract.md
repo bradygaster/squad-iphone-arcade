@@ -477,7 +477,8 @@ const state = createGame({ highScore: savedHigh });
 const renderer = createRenderer(canvas);
 const audio = createAudio();
 const input = createInput({ surface: $('stage'), pauseButton: pauseBtn, soundButton: soundBtn,
-                            toLogical: renderer.toLogical, onGesture: () => audio.unlock() });
+                            toLogical: (x, y) => renderer.toLogical(x, y),   // never pass unbound
+                            onGesture: () => audio.unlock() });
 
 const resize = () => renderer.resize();
 addEventListener('resize', resize); addEventListener('orientationchange', resize);
@@ -524,7 +525,7 @@ function frame(now) {
   requestAnimationFrame(frame);
 }
 requestAnimationFrame(frame);
-addEventListener('pagehide', () => saveHighScore(state.highScore));
+addEventListener('pagehide', persistHighScore);   // same guard as afterSim: only if > savedHigh
 
 function syncButtons() {
   // pause-btn: aria-pressed = paused, text 'RESUME'|'PAUSE', disabled when phase is title|gameOver
@@ -560,6 +561,13 @@ window.__shatterline = {
   events: GameEvent[],                // copy of events from the most recent afterSim (before clear)
 }
 ```
+
+Factory methods returned by `createRenderer`/`createInput`/`createAudio` must not depend on
+`this` (they may be called detached); main wraps them anyway.
+
+For deterministic stepping, call `stop()` first: while the rAF loop runs it also consumes
+queued `press`/`setPaddleX` input and advances time between your calls. `step()` works in
+either mode and always runs exactly `n` substeps (it is not limited by `MAX_STEPS`).
 
 Smoke script expectations (Zoe may rely on these): on load `state.phase === 'title'`,
 `audio.isMuted() === true`, `#sound-btn[aria-pressed="false"]`; `press('launch'); step()` →

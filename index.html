@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="SHATTERLINE">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="theme-color" content="#07080f">
+  <title>SHATTERLINE</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' fill='%2307080f'/%3E%3Crect x='1' y='2' width='6' height='3' fill='%23ff4f7b'/%3E%3Crect x='9' y='2' width='6' height='3' fill='%2342e8e0'/%3E%3Ccircle cx='8' cy='9' r='1.6' fill='%23ffffff'/%3E%3Crect x='4' y='13' width='8' height='2' fill='%23ffd166'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="app">
+    <div id="toolbar" role="toolbar" aria-label="Game controls">
+      <button id="pause-btn" type="button" aria-pressed="false" aria-label="Pause" disabled>PAUSE</button>
+      <button id="sound-btn" type="button" aria-pressed="false" aria-label="Sound">SOUND: OFF</button>
+    </div>
+    <div id="stage">
+      <canvas id="game" role="img" aria-label="SHATTERLINE playfield"></canvas>
+    </div>
+  </div>
+  <noscript>SHATTERLINE needs JavaScript.</noscript>
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>
