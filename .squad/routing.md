@@ -18,7 +18,7 @@ How to decide who handles what.
 | Path | Owner | Notes |
 |------|-------|-------|
 | `docs/contract.md` | Mal | Source of truth for module APIs; changes need Mal |
-| `index.html`, `src/main.js` | Mal | Bootstrap + game loop wiring |
+| `index.html`, `src/main.js`, `src/config.js` | Mal | Bootstrap + game loop wiring + shared constants |
 | `src/game.js`, `src/levels.js`, `src/storage.js` | Kaylee | Pure game logic, no DOM except storage |
 | `src/render.js`, `styles.css` | Wash | Canvas drawing, HUD, overlays, CSS |
 | `src/input.js`, `src/audio.js` | River | Input abstraction, Web Audio synth |
