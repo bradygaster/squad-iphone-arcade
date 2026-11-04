@@ -10,3 +10,6 @@
 .squad-workstream
 # squad:claude
 .claude/worktrees/
+
+# Smoke-test screenshots
+tests/out/
