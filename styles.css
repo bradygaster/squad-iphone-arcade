@@ -1,0 +1,153 @@
+/* SHATTERLINE layout. Owned by Wash. System fonts only; no external assets. */
+:root {
+  --bg: #07080f;
+  --panel: #0b0e1c;
+  --fg: #e8f6ff;
+  --dim: #7f8db8;
+  --accent: #3ef2ff;
+  --accent-2: #ff4fd8;
+  --font: ui-monospace, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+  color-scheme: dark;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
+  overscroll-behavior: none;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font);
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
+body {
+  position: fixed;
+  inset: 0;
+}
+
+#app {
+  box-sizing: border-box;
+  width: 100%;
+  height: 100vh;
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  padding: env(safe-area-inset-top) env(safe-area-inset-right)
+           env(safe-area-inset-bottom) env(safe-area-inset-left);
+  background: var(--bg);
+}
+
+#app, #app * {
+  touch-action: none;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Portrait: horizontal row above the stage. */
+#toolbar {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 6px 10px;
+}
+
+#stage {
+  flex: 1;
+  min-width: 0;
+  min-height: 0;
+  position: relative;
+  overflow: hidden;
+}
+
+#game {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+#toolbar button {
+  box-sizing: border-box;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0 14px;
+  margin: 0;
+  border: 1px solid rgba(62, 242, 255, 0.55);
+  border-radius: 10px;
+  background: var(--panel);
+  color: var(--accent);
+  font: 700 14px/1 var(--font);
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-appearance: none;
+  appearance: none;
+  transition: background-color 120ms, color 120ms, box-shadow 120ms, opacity 120ms;
+}
+
+#toolbar button:active:not([disabled]) {
+  transform: translateY(1px);
+}
+
+#toolbar button[aria-pressed="true"] {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--bg);
+  box-shadow: 0 0 12px rgba(62, 242, 255, 0.55);
+}
+
+#sound-btn[aria-pressed="true"] {
+  background: var(--accent-2);
+  border-color: var(--accent-2);
+  box-shadow: 0 0 12px rgba(255, 79, 216, 0.55);
+}
+
+#toolbar button:focus { outline: none; }
+#toolbar button:focus-visible {
+  outline: 2px solid var(--fg);
+  outline-offset: 2px;
+}
+
+#toolbar button[disabled] {
+  opacity: 0.35;
+  cursor: default;
+  box-shadow: none;
+}
+
+@media (hover: hover) {
+  #toolbar button:hover:not([disabled]):not([aria-pressed="true"]) {
+    background: #12172e;
+  }
+}
+
+/* Landscape: same portrait field letterboxed; toolbar becomes a column on the right. */
+@media (orientation: landscape) {
+  #app { flex-direction: row; }
+  #stage { order: 1; }
+  #toolbar {
+    order: 2;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    padding: 10px 8px;
+  }
+  #toolbar button { width: 100%; }
+}
+
+noscript {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--fg);
+  font: 700 16px var(--font);
+}
