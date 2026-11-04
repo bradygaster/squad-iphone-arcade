@@ -78,3 +78,8 @@ None.
 The non-blocking items can go to the next iteration. Under reviewer lockout, fixes go to a non-author (NB-1 → Wash or Kaylee, NB-2/NB-4 → Mal, NB-3 → Mal to rule).
 
 Re-run with: `node tests/smoke.mjs [screenshotDir]`.
+
+## Device check (post-review)
+
+- **2026-11-04, real iPhone (Safari, via the published Artifact page):** the owner played the game on their iPhone and reported it "worked great". This covers the one gap the headless gate could not: real touch input and Safari rendering on hardware. No new findings.
+- Gameplay GIF in the README (`docs/media/shatterline.gif`) was recorded with `tests/capture-gif.cjs` driving `window.__shatterline` in headless Chromium against the committed code: 262 frames, 0 page errors.

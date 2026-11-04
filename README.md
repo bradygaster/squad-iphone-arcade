@@ -4,6 +4,8 @@ A touch-first neon brick-breaker for the browser. Plain HTML, CSS and JavaScript
 modules: no build step, no dependencies, no external assets. Every sound is synthesized
 with Web Audio.
 
+<p align="center"><img src="docs/media/shatterline.gif" alt="SHATTERLINE gameplay: the paddle returns the ball, bricks break, WAVE 1 CLEAR +500, then wave 2 with tougher magenta bricks" width="280"></p>
+
 **Inspired by** the 1976 arcade classic *Breakout*. This is an homage only. The name,
 look, code and sound are all original, and the project is not affiliated with the
 original game or its owners.
